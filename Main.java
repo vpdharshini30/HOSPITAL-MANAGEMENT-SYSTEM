@@ -10,7 +10,7 @@ public class Main {
      
 		ArrayList<BOOK> books = new ArrayList<>();
 	
-		int choice;
+		int choice,bookid,stdid;
 		// LIBRARY Objects
         LIBRARY library = new LIBRARY();
         //LIBRARIAN Objects
@@ -40,7 +40,7 @@ public class Main {
             switch(choice) {
             case 1://Add Books
             	System.out.print("Enter The BOOK ID : ");
-            	int bookid=sc.nextInt();
+            	bookid=sc.nextInt();
             	sc.nextLine();
             	System.out.print("Enter The BOOK Name :");
             	String bookname = sc.nextLine();
@@ -61,8 +61,8 @@ public class Main {
             	
             case 3://Search book
             	System.out.print("Please Enter The BookId to Search The Book : ");
-            	int bookId=sc.nextInt();
-            	BOOK searchBook=library.searchBook(bookId);
+            	bookid=sc.nextInt();
+            	BOOK searchBook=library.searchBook(bookid);
             	 System.out.println("\n-----------------------------------------------------------------------------------------------");
       		   System.out.printf("%-10s %-25s %-25s %-20s %-15s%n","BOOK ID", "BOOK NAME","AUTHOR","CATEGORY","AVAILABILITY");
       			System.out.println("-----------------------------------------------------------------------------------------------");
@@ -83,17 +83,17 @@ public class Main {
             	
             case 5://Approve Book Issue
             	System.out.print("Enter the BookId : ");
-            	int bookID=sc.nextInt();
+            	bookid=sc.nextInt();
             	System.out.print("Enter The Student Id : ");
-            	int stid=sc.nextInt();
-            	STUDENT student5 = library.searchStudent(stid);
-            	librarian.approveBookIssue(library, student5, bookID);
+            	stdid=sc.nextInt();
+            	STUDENT student5 = library.searchStudent(stdid);
+            	librarian.approveBookIssue(library, student5, bookid);
             	break;
             	
             	
             case 6://Return Books
-            	System.out.println("Enter The Student ID");
-            	int stdid=sc.nextInt();
+            	System.out.print("Enter The Student ID : ");
+            	stdid=sc.nextInt();
                 STUDENT student = library.searchStudent(stdid);
                 if (student != null) {
                     librarian.returnBook(student);
@@ -105,8 +105,8 @@ public class Main {
             case 7://DUE date 
             	
                System.out.print("Enter The Student Id : ");
-               int remstdid=sc.nextInt();
-               LIBRARIAN.dueDate(library,remstdid);
+               stdid=sc.nextInt();
+               LIBRARIAN.dueDate(library,stdid);
                break;
             
             case 8://Report 
@@ -116,10 +116,10 @@ public class Main {
             	System.out.println("Thank You.............");
             	break;
             default:
-            	System.out.println("Try Again.............");
+            	System.err.println("Try Again Later");
             }
             
-        }while(choice!=10);
+        }while(choice!=9);
 	}
 
 	}
