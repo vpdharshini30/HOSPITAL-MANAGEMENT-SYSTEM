@@ -11,7 +11,7 @@ public class LIBRARIAN {
 	 
 	 public void addOldIssuedStudents(LIBRARY library)
 	 {
-	        // Student 1
+	        // Std 1
 	        STUDENT s1 = library.searchStudent(201);
 	        BOOK b1 = library.searchBook(102);
 	        if (s1 != null && b1 != null) 
@@ -22,7 +22,7 @@ public class LIBRARIAN {
 	            b1.setisAvaibable(false);
 	            issuedBooks.put(s1.getStudentId(), s1);	       
 	            }
-	        // Student 2
+	        // Std2 
 	        STUDENT s2 = library.searchStudent(202);
 	        BOOK b2 = library.searchBook(104);
 	        if (s2 != null && b2 != null) 
