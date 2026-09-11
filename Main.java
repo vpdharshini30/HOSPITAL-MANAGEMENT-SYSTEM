@@ -252,7 +252,7 @@ catch(IllegalArgumentException e) {
 	System.out.println("Error : "+e.getMessage());
 }
 
-        } while (choice != 9);
+        } while (choice != 10);
 
         sc.close();
         
